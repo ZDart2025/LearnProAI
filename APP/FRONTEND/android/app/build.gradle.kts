@@ -6,9 +6,9 @@ plugins {
 }
 
 android {
-    namespace = "com.example.learnpro"
+    namespace = "com.zdart.learnpro"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -20,23 +20,38 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.learnpro"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "com.zdart.learnpro"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+        signingConfigs {
+        getByName("debug") {
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+            storeFile = file("./debug.keystore")
+            storePassword = "android"
+        }
+        // create("release") {
+        //     keyAlias = "chelladurai"
+        //     keyPassword = "Outdid@123"
+        //     storeFile = file("./my-release-key.keystore")
+        //     storePassword = "Outdid@123"
+        // }
+    }
 
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+        // release {
+        //     signingConfig = signingConfigs.getByName("debug")
+        // }
+
+        debug {
+            signingConfig = signingConfigs.getByName("debug")  
         }
     }
+
+
 }
 
 flutter {
