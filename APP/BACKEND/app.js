@@ -67,7 +67,15 @@ app.use((req, res, next) => {
 });
 
 // Routes
-const routes = ['auth', 'profile'];
+const routes = [
+    'auth',
+    'profile',
+    'learning',
+    'skillSwap',
+    'curiosity',
+    'mindsync',
+    'storytelling'
+];
 routes.forEach(route => app.use(`/${route}`, require(`./routes/${route}Route`)));
 
 // Handle 404 - Not Found
@@ -128,3 +136,14 @@ const shutdown = () => {
 
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
+
+// filepath: c:\Users\migavel\Downloads\zdart\LearnPro_Dev\LearnProAI\APP\BACKEND\middlewares\authMiddleware.js
+module.exports.protect = (req, res, next) => {
+    // Example middleware logic
+    const isAuthenticated = true; // Replace with actual authentication logic
+    if (isAuthenticated) {
+        next();
+    } else {
+        res.status(401).json({ message: 'Unauthorized' });
+    }
+};
