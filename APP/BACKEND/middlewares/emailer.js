@@ -7,8 +7,8 @@ let transporter = nodemailer.createTransport({
     port: 465, // 465 for SSL or 587 for TLS
     secure: true, // true for SSL
     auth: {
-        user: "", // Your Gmail email address
-        pass: "", // App Password (not your regular Gmail password)
+        user: "zdart2026@gmail.com", // Your Gmail email address
+        pass: "yhsm mcfn brsm lwjh", // App Password (not your regular Gmail password)
     },
 });
 // Function to send email
@@ -16,7 +16,7 @@ const sendEmail = async (to, subject, text) => {
     try {
         // Define email options
         let info = await transporter.sendMail({
-            from: '"LearnPro AI" <anish@zdart.tech>', // sender address
+            from: '"LearnPro AI" <zdart2026@gmail.com>', // sender address
             to: to, // list of receivers
             subject: subject, // Subject line
             text: text, // plain text body
