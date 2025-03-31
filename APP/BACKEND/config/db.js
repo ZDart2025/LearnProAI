@@ -1,8 +1,8 @@
 const { MongoClient } = require('mongodb');
 const logger = require('../utils/logger');
 
-const url = 'mongodb+srv://outdid:outdid@cluster0.t16a63a.mongodb.net/';
-const dbName = 'EV_PHASE_III'; //For Co-production
+const url = 'mongodb+srv://zdart2026:ibzPcNPmJ71uFhnw@cluster0.dryjxuy.mongodb.net/';
+const dbName = 'LearnPro_AI'; //For Co-production
 
 let client;
 
